@@ -27,7 +27,7 @@ else {
 
 let d= 123;
 let e=5;
-if (d||e>100) {
+if (d > 100 || e > 100) {
     console.log('Верно');
 }
 else {
@@ -46,19 +46,26 @@ alert (a + b);// Задание 4
 
  let monthNumber = Number(prompt('Введите  номер месяца'));
 switch (monthNumber) {
-    case 1 && 2 && 12:
-        console.log ('Зима');
-        break;
-    case 3 && 4 && 5:
-        console.log ('Весна');
-        break;
-    case 6 && 7 && 8 :
-        console.log ('Лето ');
-        break;
-    case 9 && 10 && 11:
-        console.log ('Осень');
-        break;
- 
+        case 1:
+        case 2:
+        case 12:
+          console.log('Зима');
+          break;
+        case 3:
+        case 4:
+        case 5:
+          console.log('Весна');
+          break;
+        case 6:
+        case 7:
+        case 8:
+          console.log('Лето ');
+          break;
+        case 9:
+        case 10:
+        case 11:
+          console.log('Осень');
+          break;
  default:
-    console.log('Нужно название месяца');
+    console.log('Нужно ввести номер месяца');
  } // Задание 5
