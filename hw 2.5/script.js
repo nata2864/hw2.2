@@ -13,17 +13,17 @@ console.log ( func (6, 6));
 // Задание 1 Напишите функцию, которая возвращает меньшее из 2 чисел. Например, из двух чисел — 8 и 4 — функция должна вернуть 4. Если передадим 6 и 6, то функция должна вернуть 6.
 
 
-function evenNumber (n){
-    return n % 2;
+const evenNumber = (number) => {
+
+  if (isNaN(number)) {
+      return ('Ввели не число');
   }
-   
-  let result= evenNumber (9);
-    
-    if (result ==0) {      
-      console.log ("Число четное");
-    } else {
-      console.log (" Число нечетное");
-    }
+  if (number % 2) {
+      return ('Нечетное');
+  }
+  return ('Четное');
+
+}   
 
 //Задание 2 Напишите функцию, которая принимает число, а возвращает строку 'Число четное', если число четное, 'Число нечетное' — если нечетное.
 
@@ -35,7 +35,6 @@ function squareNumber (a) {
     console.log ( squareNumber);
    }
    
-   squareNumber (5);
 
 // Задание  3 3.1. Напишите функцию, которая принимает параметром число и выводит в консоль квадрат этого числа.   
    
@@ -45,68 +44,66 @@ let squareNumber2 = (a) => {
     return result;
     }
 
-    console.log (squareNumber2 (5));
-
 // Задание  3 3.2. Напишите функцию, которая принимает параметром число и возвращает квадрат этого числа.
 
 
-let age = prompt( "Сколько Вам лет?" );
 
 
-if ( age < 12 && age > 0) {
 
-function printMessage() {
-console.log ("Привет, друг!");
+const sayHello = () =>
+
+{
+  let userAge = prompt('Сколько Вам лет?');
+
+  if (isNaN(userAge) || userAge < 0 || userAge === null) {
+      console.log('Вы ввели неправильное значение');
+  }
+  else if (userAge <= 12) {
+      console.log('Привет, друг!');
+  }
+  else {
+      console.log('Добро пожаловать!')
+  }
 }
- } else if (age < 0) {
 
-function printMessage() {
-console.log("Вы ввели неправильное значение");
-}
-} else {
-
-function printMessage() {
-console.log("Добро пожаловать!");
-}
-}
-
-printMessage();
+sayHello ();
 
 //Задание 4 Создайте функцию, которая: Спрашивает у пользователя, сколько ему лет.
 
 
+const multiply = (a, b) => {
 
-const someNumber = NaN;
+    if (isNaN(a) || isNaN(b)) {
+        return 'Одно или оба значения не являются числом';
+    } else {
+        return a * b;
+    }
+}
 
-function number (a,b){
-
-if (a === someNumber && b === someNumber ) { console.log ( "Одно или оба значения не являются числом");
-
-} else {
-
-let mult= a*b
-console.log  (mult);
-
-}}
-
-number (1,"Напишите число")
+console.log (multiply (7, 3)); 
 
 // Задание 5 Напишите функцию, которая на вход принимает 2 числа: Проверяет, являются ли переданные параметры корректными числами.
 
+const cubeNumber= () =>
+{
+  let number = prompt('Напишите число');
 
-const a = prompt ("Напишите число");
+  if (isNaN(number) || number < 0 || number=== null) {
 
-let noNumber= isNaN(a)
-
-if (noNumber=false) {alert ( 'Переданный параметр не является числом');
+    console.log('Переданный параметр не является числом');
 
 } else {
 
-let cubeNumber = a**3;
+let n=number
+let result = n**3;
 
-console.log (`${a} в кубе равняется ${cubeNumber}`);
+console.log (`${n} в кубе равняется ${result}`);
 
 } 
+}
+
+cubeNumber();
+
 //Задание 6 Напишите функцию, которая спрашивает у пользователя число, проверяет его на корректность, после чего возводит его в куб и возвращает следующую строку: 'n в кубе равняется <получившееся значение>'. Если переданный параметр не число, вернуть строку 'Переданный параметр не является числом'.Необходимо данную функцию вызвать с параметрами от 0 до 10 включительно.
 
 
